@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CasaClick</title>
+    <link rel="stylesheet" href="build/css/app.css">
+    <style>
+        /* Estilos para el botón del chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #46a9bf;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(125, 190, 209, 0.2);
+            z-index: 1000;
+            transition: width 0.3s, height 0.3s, border-radius 0.3s;
+        }
+
+        .chatbot-container:hover {
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        .chatbot-header {
+            background-color: #3ab1c6;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+            display: none;
+        }
+
+        .chatbot-body {
+            padding: 20px;
+            display: none;
+        }
+
+        .chatbot-input {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .chatbot-send-btn {
+            background-color: #838984;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 10px 20px;
+        }
+
+        .chatbot-send-btn:hover {
+            background-color: #84c3c5;
+        }
+
+        .chatbot-container:hover .chatbot-header,
+        .chatbot-container:hover .chatbot-body {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="header inicio">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="index.html">
+                    <img src="build/img/logo.svg" alt="Logotipo de CasaClick">
+                </a>
+
+                <div class="mobile-menu">
+                    <img src="build/img/barras.svg" alt="icono menu responsive">
+                </div>
+
+                <div class="derecha">
+                    <img class="dark-mode-boton" src="build/img/dark-mode.svg">
+                    <nav class="navegacion">
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="anuncios.html">Anuncios</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="contacto.html">Contacto</a>
+                    </nav>
+                </div>
+            </div> <!--.barra-->
+            <style>
+                /* Estilos directamente en línea para el botón */
+                .boton-estilizado {
+                    background-color: #424442; /* Color de fondo */
+                    width: 200px;
+                    color: white; /* Color del texto */
+                    padding: 10px 20px; /* Espaciado interior */
+                    border: none; /* Sin borde */
+                    cursor: pointer; /* Cursor tipo puntero al pasar por encima */
+                    border-radius: 5px; /* Borde redondeado */
+                    font-size: 16px; /* Tamaño de la fuente */
+                }
+                /* Estilo al pasar el cursor sobre el botón */
+                .boton-estilizado:hover {
+                    background-color: #838984; /* Cambio de color de fondo */
+                }
+            </style>
+            <h1>Encuentra tu hogar ideal con un solo Clic</h1>
+            <a href="#search" class="boton-estilizado">Comienza tu búsqueda</a>
+        </div>
+    </header>
+
+    <main class="contenedor seccion">
+        <h1>Más Sobre Nosotros</h1>
+
+        <div class="iconos-nosotros">
+            <div class="icono">
+                <img src="build/img/icono1.svg" alt="Icono seguridad" loading="lazy">
+                <h3>Seguridad</h3>
+                <p>Tu tranquilidad es nuestra prioridad. Utilizamos tecnologías avanzadas para proteger tus datos y garantizar la calidad y seguridad de todas las propiedades listadas.</p>
+            </div>
+            <div class="icono">
+                <img src="build/img/icono2.svg" alt="Icono Precio" loading="lazy">
+                <h3>Precio</h3>
+                <p>Transparencia y valor en cada transacción. Ofrecemos precios competitivos y una estructura clara, asegurando la mejor relación calidad-precio. Personaliza nuestros servicios según tus necesidades y presupuesto.</p>
+            </div>
+            <div class="icono">
+                <img src="build/img/icono3.svg" alt="Icono Tiempo" loading="lazy">
+                <h3>A Tiempo</h3>
+                <p>Valoramos tu tiempo. Optimizamos cada proceso para que encuentres o vendas tu propiedad rápidamente. Nuestra plataforma y equipo están diseñados para ofrecer una experiencia eficiente y sin complicaciones.</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="seccion contenedor">
+        <h2>Casas y Depas en Venta</h2>
+
+        <div class="contenedor-anuncios">
+            <div class="anuncio">
+                <picture>
+                    <source srcset="build/img/anuncio1.webp" type="image/webp">
+                    <source srcset="build/img/anuncio1.jpg" type="image/jpeg">
+                    <img loading="lazy" src="build/img/anuncio1.jpg" alt="anuncio">
+                </picture>
+
+                <div class="contenido-anuncio">
+                    <h3>Casa de Lujo en el Lago</h3>
+                    <p>Disfruta de la serenidad y la belleza natural con esta impresionante casa de lujo ubicada en el lago, que ofrece una vista espectacular y acabados de primera calidad a un precio inmejorable.</p>
+                    <p class="precio">$3,0000,000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>4</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton-amarillo-block">
+                        Ver Propiedad
+                    </a>
+                </div><!--.contenido-anuncio-->
+            </div><!--anuncio-->
+
+            <div class="anuncio">
+                <picture>
+                    <source srcset="build/img/anuncio2.webp" type="image/webp">
+                    <source srcset="build/img/anuncio2.jpg" type="image/jpeg">
+                    <img loading="lazy" src="build/img/anuncio2.jpg" alt="anuncio">
+                </picture>
+
+                <div class="contenido-anuncio">
+                    <h3>Casa terminados de lujo</h3>
+                    <p>Esta casa ofrece interiores deslumbrantes con acabados de lujo, perfectos para aquellos que aprecian la atención al detalle y la elegancia en cada rincón.</p>
+                    <p class="precio">$3,0000,000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>4</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton-amarillo-block">
+                        Ver Propiedad
+                    </a>
+                </div><!--.contenido-anuncio-->
+            </div><!--anuncio-->
+
+            <div class="anuncio">
+                <picture>
+                    <source srcset="build/img/anuncio3.webp" type="image/webp">
+                    <source srcset="build/img/anuncio3.jpg" type="image/jpeg">
+                    <img loading="lazy" src="build/img/anuncio3.jpg" alt="anuncio">
+                </picture>
+
+                <div class="contenido-anuncio">
+                    <h3>Casa con alberca</h3>
+                    <p>Relájate en esta hermosa casa que incluye una alberca privada, perfecta para disfrutar del clima cálido y pasar tiempo con familia y amigos.</p>
+                    <p class="precio">$3,0000,000</p>
+
+                    <ul class="iconos-caracteristicas">
+                        <li>
+                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <p>4</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="boton-amarillo-block">
+                        Ver Propiedad
+                    </a>
+                </div><!--.contenido-anuncio-->
+            </div><!--anuncio-->
+
+        </div> <!--.contenedor-anuncios-->
+
+        <div class="alinear-derecha">
+            <a href="anuncios.html" class="boton-verde">Ver Todas</a>
+        </div>
+    </section>
+
+    <section class="imagen-contacto">
+        <h2>Encuentra la casa de tus sueños</h2>
+        <p>Llena el formulario de contacto y un asesor se pondrá en contacto contigo a la brevedad</p>
+        <a href="contacto.html" class="boton-amarillo">Contactános</a>
+    </section>
+
+    <div class="contenedor seccion seccion-inferior">
+        <section class="blog">
+            <h3>Nuestro Blog</h3>
+
+            <article class="entrada-blog">
+                <div class="imagen">
+                    <picture>
+                        <source srcset="build/img/blog1.webp" type="image/webp">
+                        <source srcset="build/img/blog1.jpg" type="image/jpeg">
+                        <img loading="lazy" src="build/img/blog1.jpg" alt="Texto Entrada Blog">
+                    </picture>
+                </div>
+
+                <div class="texto-entrada">
+                    <a href="entrada.html">
+                        <h4>Terraza en el techo de tu casa</h4>
+                        <p class="informacion-meta">Escrito el: <span>20/10/2021</span> por: <span>Admin</span> </p>
+
+                        <p>
+                            Consejos para construir una terraza en el techo de tu casa con los mejores materiales y ahorrando dinero
+                        </p>
+                    </a>
+                </div>
+            </article>
+
+            <article class="entrada-blog">
+                <div class="imagen">
+                    <picture>
+                        <source srcset="build/img/blog2.webp" type="image/webp">
+                        <source srcset="build/img/blog2.jpg" type="image/jpeg">
+                        <img loading="lazy" src="build/img/blog2.jpg" alt="Texto Entrada Blog">
+                    </picture>
+                </div>
+
+                <div class="texto-entrada">
+                    <a href="entrada.html">
+                        <h4>Guía para la decoración de tu hogar</h4>
+                        <p class="informacion-meta">Escrito el: <span>20/10/2021</span> por: <span>Admin</span> </p>
+
+                        <p>
+                            Maximiza el espacio en tu hogar con esta guia, aprende a combinar muebles y colores para darle vida a tu espacio
+                        </p>
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <section class="testimoniales">
+            <h3>Testimoniales</h3>
+
+            <div class="testimonial">
+                <blockquote>
+                    El personal se comportó de una excelente forma, muy buena atención y la casa que me ofrecieron cumple con todas mis expectativas.
+                </blockquote>
+                <p>- Johnny Depp
+                </p>
+            </div>
+        </section>
+    </div>
+    <div class="chatbot-container">
+        <div class="chatbot-header">Chatbot</div>
+        <div class="chatbot-body">
+            <p>Hola, ¿en qué puedo ayudarte hoy?</p>
+            <input type="text" class="chatbot-input" placeholder="Escribe tu mensaje...">
+            <button class="chatbot-send-btn">Enviar</button>
+        </div>
+    </div>
+
+    <footer class="footer seccion">
+        <div class="contenedor contenedor-footer">
+            <nav class="navegacion">
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+
+        <p class="copyright">Todos los derechos Reservados 2021 &copy;</p>
+    </footer>
+
+    <script src="build/js/bundle.min.js"></script>
+</body>
+</html>
